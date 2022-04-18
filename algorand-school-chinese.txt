@@ -1,4 +1,5 @@
 Algorand School
+#Algorand 学校
 
 2022
 
@@ -11,44 +12,65 @@ cosimo.bassi@algorand.com
 Our journey today:
 
 understanding Algorand Consensus and Algorand Networks, how to use Algorand Dev Tools, how to develop decentralized applications on the Algorand Virtual Machine
+#了解Algorand共识和Algorand网络，如何使用Algorand开发工具，如何开发去中心化应用以及Algorand虚拟机
 
 Agenda
+#日程
 
 Algorand Consensus
+#Algorand共识
 Algorand Decentralized Governance
+#Algorand去中心化治理
 Algorand Networks
+#Algorand网络
 Algorand Transactions
+#Algorand交易
 Algorand Accounts
+#Algorand账户
 Algorand Virtual Machine
+#Algorand虚拟机
 Algorand Smart Contracts on Layer-1
+#Algorand在Layer-1的智能合约
 Smart Signatures & Smart Contracts
+#智能签名与智能合约
 TEAL
 PyTEAL
 dApp Example & Use Cases
+#dApp试例与使用案例
 
 4
 ALGORAND CONSENSUSPure Proof of Stake (PPoS)
+#Algorand共识纯权益证明 （PPoS）
 
 What is a blockchain?
+#什么是区块链？
 5
 A blockchain is a public ledger of transactional data, distributed across a system of multiple nodes in a network.
+#区块链是一种存储了交易数据的公共账本，分布在网络上由多个节点组成的系统里。
 
 All these nodes work together, using the same set of software and rules, to verify the transactions to add to the finalized ledger. This set of rules is called consensus protocol.
+#所有的节点共同工作，使用同一套软件与规则，来验证交易并添加到最终帐本里。这一套规则被称为共识协议。
 
 The ledger is publicly verifiable, permissionless and tamper-proof.
-
+#账本是完全公开可验证，无需许可且不可篡改的。
 
 What is a blockchain?
+#什么是区块链
 6
 The “block” refers to a set of transactions that are proposed and verified by the other nodes and eventually added to the ledger.
+#“区块”指的是一系列被其他节点提出且验证并最终添加到帐本里的交易。
 The “chain” refers to the fact that each block of transactions also contains proof (a cryptographic hash) of what was in the previous block.
-
+#“链”指的是每一个区块的交易中都会涵盖对前一个区块内容的证明（一个密码散列）的现象。
 
 The architecture of consensus
+#共识的结构
 7
 Temple of Concordia
+#康考迪亚神庙（协和神殿）
 Valley of Temples (Agrigento), 440-430 B.C.
+#神庙谷（阿格里真托），公元前440-430年
 How to choose the proposer for the next block for a public and permissionless blockchain?
+#如何为一个公开且无需许可的区块链选择下一个区块的提出者？
 
 How to ensure that there is no ambiguity in the choice of the next block?
 
