@@ -10,6 +10,7 @@ Solutions Architect at Algorand Inc.
 cosimo.bassi@algorand.com
 
 Our journey today:
+#我们今天的旅程：
 
 understanding Algorand Consensus and Algorand Networks, how to use Algorand Dev Tools, how to develop decentralized applications on the Algorand Virtual Machine
 #了解Algorand共识和Algorand网络，如何使用Algorand开发工具，如何开发去中心化应用以及Algorand虚拟机
@@ -55,7 +56,7 @@ The ledger is publicly verifiable, permissionless and tamper-proof.
 #账本是完全公开可验证，无需许可且不可篡改的。
 
 What is a blockchain?
-#什么是区块链
+#什么是区块链？
 6
 The “block” refers to a set of transactions that are proposed and verified by the other nodes and eventually added to the ledger.
 #“区块”指的是一系列被其他节点提出且验证并最终添加到帐本里的交易。
@@ -73,66 +74,106 @@ How to choose the proposer for the next block for a public and permissionless bl
 #如何为一个公开且无需许可的区块链选择下一个区块的提出者？
 
 How to ensure that there is no ambiguity in the choice of the next block?
+#如何保证下一个区块的选择是没有歧义的？
 
 How to ensure that the blockchain stays unique and has no forks?
+#如何确保区块链是独特且无分叉的？
 
 How to ensure that consensus mechanism itself can evolve over time while the blockchain is an immutable ledger?
+#当区块链是一个不可变的账本时，如何确保共识机制本身是可随时间进化的？
 
 
 Consensus mechanisms
+#共识机制
 8
 CRITICAL ISSUES
+#关键问题
 PROOF OF WORK
+#工作量证明
 Miners compete with each other to append the next block and earn a reward for the effort, fighting to win an expensive computational battle.
+#矿工们相互竞争以生成新的区块并赢取奖励，争取赢得一场昂贵的计算战争。
 Huge electrical consumption
+#巨大耗电量
 Concentration of governance in few mining farms
+#治理权集中在少数矿池
 Soft-forking of the blockchain
+#区块链的软分叉
 BONDED PROOF OF STAKE
+#担保权益证明
 Validators bind their stake, to show their commitment in validating and appending a new block. Misbehaviors are punished.
+#验证者质押他们的资金，以展现他们在验证和创建新区块时的承诺。行为不端者将受到惩罚。
 Participating in the consensus protocol makes users’ stakes illiquid
+#参与共识协议让用户的资产缺少流动性
 Risk of economic barrier to entry
+#经济进入壁垒的风险
 DELEGATED PROOF OF STAKE
+#委托权益证明
 Users delegate the validation of new blocks to a fixed committee, through weighted voting based on their stakes.
+#用户通过基于他们质押资金的加权投票将新区块的验证委托给一个固定的委员会。
 Known delegate nodes, therefore exposed to DDoS attacks
+#代表节点已知，因此很容易遭受DDoS攻击
 Centralization of governance
+#中心化治理
 PoW
 BPoS
 DPoS
 
 
 Is the Blockchain Trilemma unsolvable?
+#区块链的三难困境是无法解决的吗？
 9
 TRILEMMA
+#三难困境
 2
 3
 1
 SECURITY
+#安全性
 SCALABILITY
+#可扩展性
 DECENTRALIZATION
+#去中心化
 
 
 Scalable		billions of users
+#可扩展		数十亿用户
 Efficient		1000 TPS (10x work in progress)
+#高效		1000 TPS (10x 升级工作正在进行中)
 Fast			< 5s per block
+#快速		< 5秒 每区块
 Low fees		0.001 ALGO per txn
+#低手续费		0.001 ALGO 每笔交易
 No Soft Forks 	prob. < 10-18
+#无软分叉 		概率 < 10-18
 Instant Transaction Finality
+#即时交易最终性
 Minimal hardware node requirements
+#最小化节点的硬件需求
 No delegation or binding of the stake
+#无需代理和质押资金
 No minimum stake
+#无最低质押资金
 Carbon negative
+#碳中和
 Secure with respect DDoS
+#DDoS安全
 Network Partitioning resilience
+#网络分区的弹性
 Algorand PPoS Consensus
+#Algorand PPoS 共识
 10
 Silvio Micali  Algorand Founder
 Professor MIT, Turing Award, Gödel Prize
+#MIT教授，图灵奖获得者，哥德尔奖获得者
 Digital Signatures, Probabilistic Encryption, Zero-Knowledge Proofs,
+#数字签名，概率加密，零知识证明，
 Verifiable Random Functions and other primitives of modern cryptography.
+#可验证随机函数和其他现代密码学基本原语。
 
 
 
 Who chose the next block?
+#谁选择下一个区块？
 11
 VRF
 VRF
@@ -140,13 +181,17 @@ VRF
 VRF
 WIN!
 Each online ALGO could be assimilated to a ticket participating in a safe and secret cryptographic sortition
+#每一个在线的algo可以被理解为一张参与一次安全且私密的密码学抽签的门票
 
 For each new block, tickets’ draw is performed in a distributed, parallel and secret and manner, directly on online accounts’ hardware (in microseconds)
+#对于每个新区块，门票的抽取是以分布式、并行且私密的方式直接在在线用户的硬件设备上进行的（在数毫秒内）
 
 The winner is revealed in a safe and verifiable way only after winning the draw, proposing the next block
+#胜者直到赢得抽签后，才会被以一种安全且可验证的方式公开，并提出对下一个区块的意见。
 
 
 A glimpse on “simplified” VRF sortition
+#对“简化版”VRF抽签的浅析
 12
 A secret key (SK) / public verification key (VK) pair is associated with each ALGO in the account
 For each new round r of the consensus protocol a threshold L(r) is defined
