@@ -9,6 +9,9 @@ Solutions Architect at Algorand Inc.
 
 cosimo.bassi@algorand.com
 
+
+Open Source: github.com/cusma/algorand-school
+
 Our journey today:
 #我们今天的旅程：
 
@@ -18,12 +21,16 @@ understanding Algorand Consensus and Algorand Networks, how to use Algorand Dev 
 Agenda
 #日程
 
+Blockchain as an infrastructure
+Analog properties for Digital things
 Algorand Consensus
 #Algorand共识
+Algorand Sustainability
 Algorand Decentralized Governance
 #Algorand去中心化治理
 Algorand Networks
 #Algorand网络
+Algorand Interoperability
 Algorand Transactions
 #Algorand交易
 Algorand Accounts
@@ -40,32 +47,158 @@ dApp Example & Use Cases
 #dApp试例与使用案例
 
 4
-ALGORAND CONSENSUSPure Proof of Stake (PPoS)
-#Algorand共识纯权益证明 （PPoS）
+BLOCKCHAIN AS INFRASTRUCTUREFor native digital value
 
-What is a blockchain?
-#什么是区块链？
+Blockchain is a digital infrastructure for value
 5
-A blockchain is a public ledger of transactional data, distributed across a system of multiple nodes in a network.
-#区块链是一种存储了交易数据的公共账本，分布在网络上由多个节点组成的系统里。
+"The ability to create something which is not duplicable in the digital world has enormous value."
 
-All these nodes work together, using the same set of software and rules, to verify the transactions to add to the finalized ledger. This set of rules is called consensus protocol.
-#所有的节点共同工作，使用同一套软件与规则，来验证交易并添加到最终帐本里。这一套规则被称为共识协议。
+Eric Schmidt
 
-The ledger is publicly verifiable, permissionless and tamper-proof.
-#账本是完全公开可验证，无需许可且不可篡改的。
 
-What is a blockchain?
-#什么是区块链？
+The infrastructure trilemma
 6
-The “block” refers to a set of transactions that are proposed and verified by the other nodes and eventually added to the ledger.
-#“区块”指的是一系列被其他节点提出且验证并最终添加到帐本里的交易。
-The “chain” refers to the fact that each block of transactions also contains proof (a cryptographic hash) of what was in the previous block.
-#“链”指的是每一个区块的交易中都会涵盖对前一个区块内容的证明（一个密码散列）的现象。
+TRILEMMA
+2
+3
+1
+SECURITY (INT/EXT)
+ACCESSIBILITY
+EFFICIENCY
+Public or private? Who has the control? Duty and responsibility? Aligned incentives?
+
+
+The problem of native digital value
+7
+In the digital age
+everything can be represented in bits 
+as a string of 0 and 1
+Strings of 0 and 1 are useful
+because you can
+duplicate them easily
+Value is therefore difficult to represent in the digital age:
+SCARCITY, AUTHENTICITY, UNICITY
+
+
+How to build such infrastructure? Protocol is the answer
+8
+Just like TCP/IP is the foundational protocol for the modern Internet infrastructure, we will solve the problem through an protocol.
+
+This is not just an information technology problem
+9
+DISTRIBUTED SYSTEMS
+CRYPTOGRAPHY
+GAME THEORY
+PUBLIC
+TAMPER-PROOF
+TRANSPARENT
+TRUSTLESS
+LEDGER
+Distributed systems and cryptography are elements of the communication infrastructure. We need a third element: game theory.
+
+Who controls the system? Nobody… everybody!
+10
+PAST
+FUTURE
+DISTRIBUTED SYSTEMS
+No absolute power, no single point of failure.
+
+
+Don’t trust, verify!
+11
+Nobody can break the rules…
+and
+…everybody can verify.
+CRYPTOGRAPHY
+
+
+Align incentives: collective self-protecting system
+12
+GAME THEORY
+Equilibrium in which attacking the system is less convenient than protecting it.
+
+Cost of the attack: make malicious behaviours expensive.
+
+
+13
+ANALOG PROPERTIES
+FOR DIGITAL THINGS
+Consensus as “law of Physics” for digital world
+
+Who owns what? Let’s write it down!
+14
+A blockchain is a public ledger of transactional data.
+World's first writing — cuneiform — traces its beginnings back to an ancient system of accounting.
+WHO
+
+OWNS
+
+WHAT
+Writing systems: from prehistory to history of humankind.
+
+More copies are better than one!
+15
+Distributed and replicated across a system of multiple nodes in a network.
+All “ledger keepers” should work together, using the same set rules, to verify the transactions to add to each copy of the finalized ledger. 
+
+
+16
+Atoms can’t be copy & pasted and are obliged to follow the arrow of time!
+Bits can be copy & pasted and are not obliged to follow the arrow of time!
+Entropy, irreversibility and the arrow of time
+In a distributed system is hard to ensure that the information follows a consequential time. Also, the arrow of time could bypassed reverting transactions. The ledger of information must respect a precise history and must not allow arbitrary creation, duplication or deletion of information. 
+
+A chain of transactions organized in blocks
+17
+The “block” refers to a set of transactions that are proposed and verified by the other nodes and eventually added to the ledger (no copy & paste).
+The “chain” refers to the fact that each block of transactions contains proof (a cryptographic hash) of what was in the previous block (arrow of time).
+
+
+
+
+
+Can transactions be reverted or modified ex-post? No! Dura lex, sed lex!
+
+
+A distributed state machine
+18
+A machine
+The evolution of the states of the system is determined…
+
+SYSTEM STATE
+S0
+
+SYSTEM STATE
+Sn
+
+SYSTEM STATE
+S1
+BLOCK N
+SMART CONTRACT
+TRANSACTION
+The evolution of the states of the system is determined…
+…acting on atoms, through the inviolable laws of Physics!
+…acting on bits, through what?
+BLOCK 1
+SMART CONTRACT
+TRANSACTION
+The more complex the state transition the more power I consume: adding 1 transaction per month is easy, executing thousands of smart contracts on the AVM is complicated.
+
+The responsibility of correct information
+19
+Margaret Hamilton in 1969, standing next to listings of the software she and her MIT team produced for the Apollo project.
+BLOCK PROPOSER
+GENESIS BLOCK
+BLOCK 1
+BLOCK N
+BLOCK N+1
+How should we replace the role played by the law of Physics in evolving the state of a machine?
+
+With a set of software rules, called Consensus Protocol that evolves the state of the system. 
+Paleo-computing: no IDE, no syntax highlighting, handwritten code (value of conciseness).
 
 The architecture of consensus
-#共识的结构
-7
+20
 Temple of Concordia
 #康考迪亚神庙（协和神殿）
 Valley of Temples (Agrigento), 440-430 B.C.
@@ -82,22 +215,38 @@ How to ensure that the blockchain stays unique and has no forks?
 How to ensure that consensus mechanism itself can evolve over time while the blockchain is an immutable ledger?
 #当区块链是一个不可变的账本时，如何确保共识机制本身是可随时间进化的？
 
+It is the largest and best-preserved Doric temple in Sicily[5] and one of the best-preserved Greek temples in general,[1] especially of the Doric order. Named after Concordia.
+In ancient Roman religion, Concordia is the goddess who embodies agreement in society. Her Greek equivalent is usually regarded as Harmonia, with musical harmony a metaphor for an ideal of social concord.
+This tells us a lot about the value of such a civilization!
 
-Consensus mechanisms
-#共识机制
-8
-CRITICAL ISSUES
-#关键问题
-PROOF OF WORK
-#工作量证明
+Proof of Work consensus mechanism
+21
 Miners compete with each other to append the next block and earn a reward for the effort, fighting to win an expensive computational battle.
 #矿工们相互竞争以生成新的区块并赢取奖励，争取赢得一场昂贵的计算战争。
+The more computational power, the higher the probability of being elected as block proposer.
+PoW
+
+
+Proof of Work limits
+22
 Huge electrical consumption
 #巨大耗电量
 Concentration of governance in few mining farms
 #治理权集中在少数矿池
 Soft-forking of the blockchain
 #区块链的软分叉
+
+
+Proof of Stake consensus mechanism
+23
+Network participants show their commitment and interest in keeping the ledger safe and secure proving the ownership of value stored on the ledger itself.
+
+The higher the skin in the game the higher the probability of being elected as block proposer.
+
+
+Proof of Stake limits
+24
+CRITICAL ISSUES
 BONDED PROOF OF STAKE
 #担保权益证明
 Validators bind their stake, to show their commitment in validating and appending a new block. Misbehaviors are punished.
@@ -114,14 +263,16 @@ Known delegate nodes, therefore exposed to DDoS attacks
 #代表节点已知，因此很容易遭受DDoS攻击
 Centralization of governance
 #中心化治理
-PoW
 BPoS
 DPoS
+It’s like playing Battleship knowing the coordinates of adversary in advance.
 
+25
+ALGORAND CONSENSUSPure Proof of Stake (PPoS)
 
 Is the Blockchain Trilemma unsolvable?
 #区块链的三难困境是无法解决的吗？
-9
+26
 TRILEMMA
 #三难困境
 2
@@ -161,7 +312,7 @@ Network Partitioning resilience
 #网络分片的恢复力
 Algorand PPoS Consensus
 #Algorand PPoS 共识
-10
+27
 Silvio Micali  Algorand Founder
 Professor MIT, Turing Award, Gödel Prize
 #MIT教授，图灵奖获得者，哥德尔奖获得者
@@ -170,29 +321,40 @@ Digital Signatures, Probabilistic Encryption, Zero-Knowledge Proofs,
 Verifiable Random Functions and other primitives of modern cryptography.
 #可验证随机函数和其他现代密码学基本原语。
 
+Flat fee is very powerful for business models: given a users base, an estimation of users activity (tx/day) a business team can foresee the costs and hedge the on-chain resources.
+
+Tamper-proof, unique and verifiable dices
+28
+
+
+
+
+
+VRF
+Dices are perfectly balanced and equiprobable, nobody could tamper their result!
+Keep observing dice rolls by no means increases the chance of guessing the next result!
+Each dice is uniquely signed by its owner, nobody can roll someone else dices!
+Dices are publicly verifiable, everybody can read the results of a roll!
 
 
 Who chose the next block?
 #谁选择下一个区块？
-11
+29
 VRF
 VRF
 VRF
 VRF
 WIN!
-Each online ALGO could be assimilated to a ticket participating in a safe and secret cryptographic sortition
-#每一个在线的algo可以被理解为一张参与一次安全且私密的密码学抽签的门票
+Each ALGO could be assimilated to a tamper-proof dice participating in a safe and secret cryptographic dice roll. More ALGOs more dices to roll.
 
-For each new block, tickets’ draw is performed in a distributed, parallel and secret and manner, directly on online accounts’ hardware (in microseconds)
-#对于每个新区块，门票的抽取是以分布式、并行且私密的方式直接在在线用户的硬件设备上进行的（在数毫秒内）
+For each new block, dice rolls are performed in a distributed, parallel and secret and manner, directly on online accounts’ hardware (in microseconds).
 
-The winner is revealed in a safe and verifiable way only after winning the draw, proposing the next block
-#胜者直到赢得抽签后才会被以一种安全且可验证的方式公开，并提出下一个区块。
+The winner is revealed in a safe and verifiable way only after winning the dice roll, proposing the next block.
 
 
 A glimpse on “simplified” VRF sortition
 #对“简化版”VRF抽签的浅析
-12
+30
 A secret key (SK) / public verification key (VK) pair is associated with each ALGO in the account
 #账户中的每一个ALGO都关联着一个私钥(SK)/公钥(VK)对
 For each new round r of the consensus protocol a threshold L(r) is defined
@@ -210,7 +372,7 @@ Others node can use the public verification key (VK) to verify, through ⍴SK(se
 
 Pure Proof of Stake, in short
 #总而言之，纯粹权益证明
-13
+31
 Through the cryptographic lottery, an online account is elected with probability directly proportional to its stake: each ALGO corresponds to an attempt to win the lottery!
 #通过密码学抽奖，一个在线用户被选中的概率与他持有的份额成正比：每个ALGO都对应着一次抽奖机会！
 
@@ -231,7 +393,7 @@ Each round of the consensus protocol appends a new block in the blockchain:
 
 Pure Proof of Stake security
 #纯粹权益证明的安全性
-14
+32
 Algorand’s decentralized Byzantine consensus protocol can tolerate an arbitrary number of malicious users as long as honest users hold a super majority of the total stake in the system.
 #Algorand的去中心化拜占庭协议可以容忍任意数量的恶意用户，只要诚实用户持有系统中绝对多数的总权益。
 The adversary does not know which users he should corrupt.
@@ -246,39 +408,26 @@ Algorand is able to recover shortly after network partition is resolved and guar
 #Algorand能够在解决网络分区后很快恢复，并保证以与分区之前相同的速度生成新的区块。
 
 
-Pure Proof of Stake, some numbers
-#纯粹逻辑证明，一些数字
-15
+Pure Proof of Stake: the output!
+33
 BLOCKS
-#区块
-> 18 M with 0 downtime
-#> 1800万，0故障
+> 20M with 0 downtime
 BLOCKCHAIN SIZE
-#区块链规模
-~ 900 GB
+~ 1 TB
 ADDRESSES
-#地址
-> 18 M with ~ 6 M monthly active addresses
-#> 1800万 其中 ～ 600万月活跃地址
+> 23M with ~ 2M monthly active addresses
 AVG. BLOCK FINALIZATION
-#平均区块生成时间
 ~ 4,4 sec per block
-#～ 每区块4.4 秒 
-TXNS VOLUME MONTHLY PEAK
-#每月交易量峰值
-~ 40 M transactions (March 2021)
-#～ 4000万笔交易 （2021年 三月）
+TXNS WEEKLY VOLUME
+~ 11M transactions (March 2022)
 TPS WEEKLY PEAK
-#每秒交易量周峰值
 ~ 1150 transactions per second
-#～ 每秒1150笔交易
-* up to January 2022
-# *至2022年一月
-
+* up to March 2022
+This is the output that such a complex machine has produced so far… We still have to answer to the opening question: “is this machine good at consuming input resources to produce the desired output for which it has been designed for?”
 
 Algorand Layer-1 primitives
 #Algorand Layer-1 原语
-16
+34
 
 Algorand Standard Assets (ASA)
 #Algorand 标准资产
@@ -287,21 +436,144 @@ Atomic Transfers
 #原子交易
 (AT)
 
-Algorand Smart Contracts (ASC1)
-#Algorand智能合约(ASC1)
+Algorand Virtual Machine (AVM)
 
 
 
 
 
+Algorand State Proof (ASP)
 
-17
+
+
+
+TRUSTLESS
+INTEROPERABLE
+POST-QUANTUM SECURE
+
+
+
+
+
+What does execution on Layer-1 mean?
+35
+B1
+B2
+...
+Br
+ASC1 CALL
+ASC1 CALL
+ASC1 CALL
+TXN 1
+ASC1 CALL
+L-1 CONSENSUS COMMITTEE
+
+4.5 sec
+L-1 CONSENSUS COMMITTEE
+
+4.5 sec
+L-1 CONSENSUS COMMITTEE
+
+4.5 sec
+EXECUTION ON PPoS CONSENSUS LEVEL
+up to 5000 txn/block
+up to 5000 txn/block
+AVM execution does not slow down the whole blocks production!
+up to 5000 txn/block
+up to 5000 txn/block
+Each complex system is characterised by a “natural pulsation”. For electrical networks is the grid’s frequency, for automated assembly lines is the production tack-time. We, humans, are complex systems, our natural pulsations is the heartbeat. Block time is Algorand’s heartbeat!
+
+What does execution on Layer-1 mean?
+36
+Smart Contracts are executed “at consensus level”
+Benefit from network's speed, security, and scalability
+Fast trustless execution (~4.5 seconds per block)
+Low cost execution (0.001 ALGO regardless SC’s complexity)
+Instant Finality of Smart Contracts’ effects
+Native interoperability with Layer-1 primitives
+Safe high level languages (PyTeal, Reach, Clarity)
+Low energy consumption
+
+
+37
+ALGORAND SUSTAINABILITY“Permission-less” is not “Responsibility-less”
+
+Proof of unsustainable Work
+38
+Proof of Work is a planetary wasteful computational battle, in which miners MUST burn energy to secure the blockchain.
+Showing off personal commitment in the ecosystem through the consumption of computational and energetic resources is at the core of PoW consensus mechanism.
+
+Our planet Earth can no longer afford unsustainable technologies.
+
+
+39
+A matter of orders of magnitude (PoW vs PPoS)
+Eiffel Tower
+Paper sheet thickness
+2x Burj Khalifa
+103
+102
+10-5
+
+
+40
+You like to win easy!
+What about others Proof of Stake?
+
+
+When the going gets tough, the tough get going (PoS vs PPoS)
+41
+Blockchain sustainability must consider scalable end-user transactions (uTPS) finality (f), nodes hardware (N), and secure network decentralization (d).
+
+
+
+
+
+Being sustainable while centralized, insecure or not scalable
+is worthless!
+DECENTRALIZED
+SECURE
+NETWORK
+(running on Consensus Protocol)
+
+(f, N, d)
+INPUT
+OUTPUT
+POWER
+(Pval)
+END-USER
+FINALIZED
+TRANSACTIONS
+(uTPS)
+
+
+Reframing the question
+42
+Is Algorand blockchain efficient
+at consuming energy 
+to finalize end user useful transactions
+in a secure, scalable and decentralized way?
+
+
+Algorand solves blockchain trilemma sustainably
+43
+Algorand transactions are 100% available to end-users
+(other PoS blockchains consume their own transactions for consensus)
+Algorand transactions are 100% instantly final
+(other PoS must consume the energy of several blocks to ensure transactions’ finality)
+Algorand transactions are secured by a very decentralized network
+(some PoS blockchain have only few validators)
+Algorand security is a feature of its own efficiency
+(Algorand never experienced downtime since the genesis block)
+
+
+44
 DECENTRALIZED GOVERNANCEGoverning ALGO
 #去中心化治理
 
 ALGO Decentralized Governance
 #ALGO去中心化治理
-18
+45
 Decentralized Governors
 #去中心化治理者
 Vote on-chain, each quarter, by staking their ALGO-votes in governance.
@@ -315,7 +587,7 @@ Decentralized Governance over Algorand Ecosystem Resource Pool (AERP), including
 
 
 The ALGO
-19
+46
 * January 2022
 #*2022年一月
 GENESIS BLOCK
@@ -350,13 +622,13 @@ GOVERNORS
 ~ 65 k
 #～ 六万五千人
 
-20
+47
 ALGORAND NETWORKSNodes, Indexer and APIs
 #ALGORAND网络节点，索引器和API
 
 Algorand Node configurations
 #Algorand节点配置
-21
+48
 Non-Relay Nodes
 #非中继节点
 Participate in the PPoS consensus (if hosting participation keys)
@@ -366,7 +638,7 @@ Connect only to Relay Nodes
 Light Configuration: store just the lastest 1000 blocks (Fast Catch-Up)
 #轻量化配置：只存储最新的1000个区块（快速更新）
 Archival Configuration: store all the chain since the genesis block
-#归档配置：存储从创世区块开始的所有链
+#存档配置：存储从创世区块开始的所有链
 
 Relay Nodes
 #中继节点
@@ -382,7 +654,7 @@ Highly efficient communication paths, reducing communication hops
 
 Example of Algorand Network topology
 #节点网络拓扑案例
-22
+49
 Node Metrics
 #节点指标
 Non-Relay Nodes: 	> 1600
@@ -391,7 +663,7 @@ Relay Nodes:		> 120
 #中继节点:		 > 120
 
 
-23
+50
 Access to Algorand Network
 #访问Algorand网络
 The Algorand blockchain is a distributed system of nodes each maintaining their local state based on validating the history of blocks and the transactions therein. Blockchain state integrity is maintained by the consensus protocol which is implemented within the Algod daemon (often referred to as the node software).
@@ -409,23 +681,27 @@ These two pieces of information can be provided by your local node or by a third
 #这两部分信息可以由本地节点或者一个第三方节点作为服务提供。
 
 
-24
+51
 How to get an Algod Client?
 #如何获得一个Algod客户端？
 There are three ways to get a REST API Algod endpoint IP address / access token, each with their respective pros and cons depending on development goals.
 #有三种方法可以获得REST API Algod 端点IP地址/访问令牌，每种方法根据开发目标都有各自的优缺点。
 
 
-25
+52
 Algorand Networks
 #Algorand网络
 
 
-26
+53
 Algorand Node -  Writing on the blockchain
+#Algorand节点 - 写在区块链上
 Install (Linux, MacOS, Windows)
+#安装（Linux, MacOS, Windows）
 Choose a network (MainNet, TestNet, BetaNet, PrivateNet)
+#选择一个网络（MainNet, TestNet, BetaNet, PrivateNet）
 Start & Sync with the network, Fast Catchup
+#开始&同步网络，快速跟进
 
 genesis.json (mainnet)
 
@@ -457,22 +733,29 @@ genesis.json (mainnet)
   "timestamp": 1560211200
 }
 Interacting with Algorand Nodes
+#与Algorand节点交互
 CLI utilities: 		goal, kmd and algokey
+#CLI 工具: 		goal, kmd and algokey
 REST API interface: 	algod V2, kmd, indexer
+#REST API 接口: 	algod V2, kmd, indexer
 Algorand SDKs: 		JavaScript, Python, Java o Go
 
 
-27
+54
 Algorand Indexer - Reading from the blockchain
+#Algorand 索引器 - 从区块链读取
 The Indexer provides a REST API interface of API calls to query the Algorand blockchain. The Indexer REST APIs retrieves blockchain data from a PostgreSQL database, populated using the Indexer instance connected to an Archival Algorand node that reads blocks’ data. As with the Nodes, the Indexer can be used as a third-party service.
+#索引器提供了一个可供API调用的REST API接口以查询Algorand链。索引器REST APIs从PostgreSQL数据库中检索区块链数据，使用连接到读取块数据的Algorand存档节点的索引器实例进行填充。与节点一样，索引器可以被用作一个第三方服务。
 
 
-28
+55
 How to interact with Algorand Node and Indexer
+#如何与Algorand节点和索引器交互
 
 
-29
+56
 Algorand Community SDKs
+#Algorand社区SDKs
 Java
 JavaScript
 Python
@@ -485,31 +768,57 @@ Algorand SDKs
 Swift
 
 
-30
+57
 Algorand Developer Portal
+#Algorand 开发者门户
 
 
-31
+58
 Awesome Algorand
 
 
-32
+59
 Algorand Wallets
+#Algorand 钱包
 Mobile Wallet + Wallet Connect
+#移动钱包+钱包关联
 MyAlgo Wallet
 AlgoSigner
 
-
-33
+60
 Algorand Explorers
+#Algorand浏览器
 
 
-34
+61
+ALGORAND INTEROPERABILITYState Proofs and Post-Quantum Security
+Credits to Noah Grossman for contens
+
+Trustless interoperability
+62
+Algorand approach to interoperability:
+cross-chain transactions should rely just on
+Trust in departing consensus protocol
+Trust in arrival consensus protocol
+without centralized bridges or validator networks, to handle the assets.
+
+Algorand State Proofs remove trusted centralized operators becoming the first trustless post-quantum secure L1 interoperability standard.
+
+
+Post-Quantum Secure Algorand State Proofs
+63
+Post-Quantum secure and immutable proofs, attesting blockchain state, generated by Pure Proof of Stake consensus protocol.
+
+
+64
 ALGORAND TRANSACTIONS
+#ALGORAND交易
 Core element of blocks
+#块的核心元素
 
 Changing blockchain state
-35
+#修改区块链的状态
+65
 Transactions are the core element of blocks, which define the evolution of distributed ledger state. There are six transaction types in the Algorand Protocol:
 Payment
 Key Registration
@@ -522,7 +831,7 @@ These six transaction types can be specified in particular ways that result in m
 
 
 Signature, fees and round validity
-36
+66
 In order to be approved, Algorand’s transactions must comply with:
 
 Signatures: transactions must be correctly signed by its sender, either a Single Signature, a Multi Signature or a Smart Signature / Smart Contract
@@ -531,7 +840,7 @@ Round validity: to handle transactions’ idempotency, letting Non-Archival node
 
 
 Browse through a transaction
-37
+67
 Transactions are characterized by two kind of fields (codec):
 
 common (header)
@@ -539,16 +848,16 @@ specific (type)
 
 
 Payment Transaction example
-38
+68
 Here is a transaction that sends 5 ALGO from one account to another on MainNet.
 
 
-39
+69
 ALGORAND ACCOUNTS
 Transactions’ Authorization
 
 Signatures
-40
+70
 SECRET KEY
 32 bytes
 PUBLIC KEY
@@ -567,13 +876,13 @@ MNEMONIC: the 25-word mnemonic is generated by converting the private key bytes 
 
 
 Algorand Accounts
-41
+71
 Accounts are entities on the Algorand blockchain associated with specific on-chain local sate. An Algorand Address is the unique identifier for an Algorand Account.
 All the potential keys pairs “already exists” mathematically, we just keep discovering them.
 
 
 Transactions Authorization and Rekey-To
-42
+72
 PUBLIC ADDRESS
 MULTI SIGNATURE ACCOUNT
 LOCAL STATE
@@ -591,11 +900,15 @@ SMART SIG
 LOCAL STATE
 
 
-43
+Account State Minimum Balance
+73
+
+
+74
 ALGORAND VIRTUAL MACHINE (AVM)Programming on Algorand
 
 What’s a Smart Contract ?
-44
+75
 Smart Contracts are deterministic programs through which complex decentralized trustless applications can be executed on the AVM.
 The Algorand Virtual Machine is a Turing-complete secure execution environment that runs on Algorand consensus layer.
 What’s the AVM ?
@@ -603,7 +916,7 @@ What’s the AVM ?
 
 Algorand Virtual Machine purpose: approving or rejecting transactions’ effects on the blockchain according to Smart Contracts’ logic.
 What the AVM actually does?
-45
+76
 AVM approves transactions’ effects if and only if:
 There is a single non-zero value on top of AVM’s stack;
 AVM rejects transactions’ effects if and only if:
@@ -613,7 +926,7 @@ There is no value on the AVM’s stack;
 
 
 How the AVM works?
-46
+77
 Suppose we want the AVM to check the following assertion:
 1 + 2 = 3
 [...]
@@ -624,8 +937,101 @@ Suppose we want the AVM to check the following assertion:
 STACK MACHINE
 
 
+How the AVM works?
+78
+Suppose we want the AVM to check the following assertion:
+1 + 2 = 3
+1
+[...]
+[...]
+[...]
+[...]
+STACK MACHINE
+pushing first operand
+
+
+How the AVM works?
+79
+Suppose we want the AVM to check the following assertion:
+1 + 2 = 3
+2
+1
+[...]
+[...]
+[...]
+STACK MACHINE
+pushing
+second operand
+
+
+How the AVM works?
+80
+Suppose we want the AVM to check the following assertion:
+1 + 2 = 3
+2
+1
+[...]
+[...]
+[...]
+STACK MACHINE
+applying
+operator
+
+
+How the AVM works?
+81
+Suppose we want the AVM to check the following assertion:
+1 + 2 = 3
+3
+[...]
+[...]
+[...]
+[...]
+STACK MACHINE
+
+
+How the AVM works?
+82
+Suppose we want the AVM to check the following assertion:
+1 + 2 = 3
+3
+3
+[...]
+[...]
+[...]
+STACK MACHINE
+pushing
+last operand
+
+
+How the AVM works?
+83
+Suppose we want the AVM to check the following assertion:
+1 + 2 = 3
+3
+3
+[...]
+[...]
+[...]
+STACK MACHINE
+applying
+operator
+
+
+How the AVM works?
+84
+Suppose we want the AVM to check the following assertion:
+1 + 2 = 3
+true
+[...]
+[...]
+[...]
+[...]
+STACK MACHINE
+
+
 AVM architecture
-54
+85
 Sender
 Receiver
 Fee
@@ -649,14 +1055,15 @@ APP GLOBAL K/V PAIRS
 [i]:  UInt64 / Bytes
 [15]: UInt64 / Bytes
 APP LOCAL K/V PAIRS
-[0]: UInt64/ Bytes
-[i]: UInt64/ Bytes
-[15]:UInt64/ Bytes
-[0]:    Bytes
-[i]:    Bytes
-[3]:    Bytes
-[0]:   UInt64
-[1]:   UInt64
+[0]:  UInt64/ Bytes
+[i]:  UInt64/ Bytes
+[15]: UInt64/ Bytes
+[0]:  Bytes
+[i]:  Bytes
+[3]:  Bytes
+[0]:  UInt64
+[i]:  UInt64
+[7]:  UInt64
 APP IDs ARRAY
 ACCOUNT ARRAY
 APP ARG ARRAY
@@ -686,25 +1093,27 @@ int 77
 PROGRAM
 [0]:    UInt64 / Bytes
 [i]:    UInt64 / Bytes
-[999]: UInt64 / Bytes
+[999]:  UInt64 / Bytes
 STACK MACHINE
 [0]:    UInt64 / Bytes
 [i]:    UInt64 / Bytes
 [255]:  UInt64 / Bytes
 SCRATCH SPACE
-[0]:   UInt64
-[1]:   UInt64
+[0]:  UInt64
+[i]:  UInt64
+[7]:  UInt64
 ASSET ARRAY
 Stateless properties
 Stateful properties
 Processing
+Max Key + Value size: 128 bytes
 
 
 NODE
 COMPILERS
 IDEs
 How to program the AVM?
-55
+86
 Algorand Virtual Machine (AVM)
 TEAL
 AVM Bytecode
@@ -722,22 +1131,8 @@ Languages...
 ...
 
 
-Latest release: AVM 0.9
-56
-The AVM now supports looping and subroutines.
-Sharing data between SCs when combing contract calls in Atomic Transfers.
-Delegating transaction fees using pooled transaction fees in Atomic Transfers.
-AVM dynamic opcode cost evaluation, allowing larger and more modular SCs.
-Much larger Stateful Smart Contracts (up to 8kb of program).
-More versatile application transaction array indexes.
-Customizable global and local state key/value pairs, to maximize storage.
-Larger URLs for Algorand Standard Assets (up to 96 bytes).
-More precision: 512 bit math operations for byteslice arithmetic.
-Many additional TEAL opcodes (including more advanced math operators).
-
-
 AVM vs EVM
-57
+87
 Algorand Virtual Machine
 Ethereum Virtual Machine
 TURING COMPLETENESS
@@ -749,9 +1144,9 @@ regardless dApp complexity
 > 20 sec
 depends on dApp complexity
 ENERGY EFFICIENCY
-0.000008 [kWh/txn]
+~10-5 [kWh/txn]
 all final
-120 [kWh/txn]
+~102 [kWh/txn]
 not all final
 EXECUTION COSTS
 ~ 0.001 $ (public network)
@@ -774,7 +1169,7 @@ Solidity, Viper, Reach, ...
 
 
 What can be built on the AVM?
-58
+88
 Escrow accounts
 KYC processes
 Financial instruments (Bonds, ETFs, etc.)
@@ -786,51 +1181,11 @@ Programmatic recurring fees / recurring debt
 And more...
 
 
-59
+89
 ASC1Algorand Smart Contracts on Layer-1
 
-What does execution on Layer-1 mean?
-60
-Smart Contracts are executed “at consensus level”
-Benefit from network's speed, security, and scalability
-Fast trustless execution (~4.5 seconds per block)
-Low cost execution (0.001 ALGO regardless SC’s complexity)
-Instant Finality of Smart Contracts’ effects
-Native interoperability with Layer-1 primitives
-Safe high level languages (PyTeal, Reach, Clarity)
-Low energy consumption
-
-
-What does execution on Layer-1 mean?
-61
-B1
-B2
-...
-Br
-ASC1 CALL
-ASC1 CALL
-ASC1 CALL
-TXN 1
-ASC1 CALL
-L-1 CONSENSUS COMMITTEE
-
-4.5 sec
-L-1 CONSENSUS COMMITTEE
-
-4.5 sec
-L-1 CONSENSUS COMMITTEE
-
-4.5 sec
-EXECUTION ON PPoS CONSENSUS LEVEL
-up to 5000 txn/block
-up to 5000 txn/block
-ASC1 execution does not slow down the whole blocks production
-up to 5000 txn/block
-up to 5000 txn/block
-
-
 AVM Modes
-62
+90
 ASC1
 Mode 1:
 SMART SIGNATURE
@@ -844,7 +1199,7 @@ Mode 1:
 SMART SIGNATURE
 (Stateless)
 Stateless ASC1
-63
+91
 ASC1
 Mode 2:
 APPLICATION
@@ -860,7 +1215,7 @@ Signature
 
 
 Stateful ASC1
-64
+92
 ASC1
 Mode 1:
 LOGIC SIGNATURE
@@ -878,11 +1233,11 @@ SMART CONTRACTS
 (Stateful)
 
 
-65
+93
 SMART SIGNATURESAuthorizing transactions through TEAL logic
 
 Creating Smart Signature
-66
+94
 txn TypeEnum
 int 1
 ==
@@ -910,10 +1265,12 @@ PROGRAM
 NODE
 SMART SIGNATURE
 CONTRACT PUBLIC ADDRESS
+Compiled TEAL Max Size: 1000 bytes
+OpCode Max Budget: 20.000
 
 
 Contract Account
-67
+95
 CONTRACT ACCOUNT
 
 ASC1 PUBLIC ADDRESS
@@ -930,7 +1287,7 @@ binding
 
 
 Delegated Signature
-68
+96
 STANDARD / MULTISIG
 ACCOUNT
 SMART SIGNATURE
@@ -947,11 +1304,11 @@ SECRET KEY
 binding
 
 
-69
+97
 SMART CONTRACTSDecentralized Applications on Algorand
 
 Deploying Applications on chain
-70
+98
 txn TypeEnum
 int 1
 ==
@@ -988,10 +1345,12 @@ B3
 Br
 BLOCKCHAIN
 APPLICATION ID
+Compiled TEAL Max Size: 2048 bytes (+3 Extra Pages)
+OpCode Max Budget: 700 (x16 Atomic Calls)
 
 
 Interacting with Applications
-71
+99
 APPLICATION CALL
 TRANSACTION
 APPLICATION
@@ -1020,13 +1379,14 @@ Apps
 Arguments
 Assets
 Accounts
+LOG VALUE
 
 
-72
+100
 TEALAVM assembly-like language
 
 Smart Signature Example
-73
+101
 Suppose we want to develop a Smart Signature that approves a transaction if and only if:
 
 is “Payment” type transaction;
@@ -1040,7 +1400,7 @@ Where do we start?
 
 
 Smart Signature as “Transaction Observer”
-74
+102
 Smart Signatures can be defined as a “transactions’ observers”: programs that meticulously check all fields in the transaction (or in a group of transactions) that intend to “approve” or “reject” based on TEAL logic.
 
 To translate those 6 semantically defined example’s conditions into TEAL we need to check which transaction fields are going to be controlled by Smart Signature’s logic.
@@ -1051,7 +1411,7 @@ Let's start with the translation...
 
 
 Translating conditions into TEAL…
-75
+103
 is “Payment” type transaction;
 txn TypeEnum
 int 1
@@ -1059,7 +1419,7 @@ int 1
 1
 
 
-76
+104
 the receiver is a specific “ADDR”;
 txn Receiver
 addr AOC7...
@@ -1068,7 +1428,7 @@ addr AOC7...
 Translating conditions into TEAL…
 
 
-77
+105
 fees are less or equal to “1000 microALGO”;
 txn Fee
 int 1000
@@ -1077,7 +1437,7 @@ int 1000
 Translating conditions into TEAL…
 
 
-78
+106
 first argument is equal to “bianconiglio”;
 arg 0
 byte base64 "YmlhbmNvbmlnbGlv"
@@ -1086,7 +1446,7 @@ byte base64 "YmlhbmNvbmlnbGlv"
 Translating conditions into TEAL…
 
 
-79
+107
 amount is  equal to “42 ALGO”;
 txn Amount
 int 42000000
@@ -1095,7 +1455,7 @@ int 42000000
 Translating conditions into TEAL…
 
 
-80
+108
 amount is  equal to “77 ALGO”;
 txn Amount
 int 77000000
@@ -1104,7 +1464,7 @@ int 77000000
 Translating conditions into TEAL…
 
 
-81
+109
 Logic connectors…
 txn TypeEnum
 int 1
@@ -1143,7 +1503,7 @@ STACK
 6
 
 
-82
+110
 Logic connectors…
 txn TypeEnum
 int 1
@@ -1185,7 +1545,7 @@ This is probably the most complex phase in TEAL programming, because you need to
 This phase is drastically simplified with the use of PyTEAL, Python binding for TEAL, which automatically performs this concatenation, saving us the effort of thinking about the state of the stack.
 
 
-83
+111
 Execution…
 txn TypeEnum
 int 1
@@ -1218,7 +1578,7 @@ STACK
 [...]
 
 
-117
+145
 Conclusion…
 1
 txn TypeEnum
@@ -1252,17 +1612,17 @@ STACK
 True
 
 
-118
+146
 PyTEALWriting Smart Contracts with Python
-
-What’s PyTEAL?
-119
-PyTEAL is a Python language binding for Algorand Virtual Machine.
-PyTEAL allows Smart Contracts and Smart Signatures to be written in Python and then compiled to TEAL.
 Credits to Jason Paulos for the PyTEAL presentation
 
+What’s PyTEAL?
+147
+PyTEAL is a Python language binding for Algorand Virtual Machine.
+PyTEAL allows Smart Contracts and Smart Signatures to be written in Python and then compiled to TEAL.
 
-120
+
+148
 It’s easier with PyTEAL!
 TEAL Source Code
 txn Receiver
@@ -1293,12 +1653,12 @@ COMPILE...
 AVM bytecode
 
 
-121
+149
 Smart Signature written in PyTEAL
 
 
 PyTEAL Basics - Intro
-122
+150
 PyTEAL expressions represent an abstract syntax tree (AST)
 You’re writing Python code that produces TEAL code.
 from pyteal import *
@@ -1308,7 +1668,7 @@ teal_source = compileTeal(program, mode=Mode.Application, version=5)
 
 
 PyTEAL Basics - Types (1/2)
-123
+151
 Two basic types:
 uint64
 byte strings
@@ -1319,7 +1679,7 @@ z = Bytes("base16", "05")
 
 
 PyTEAL Basics - Types (2/2)
-124
+152
 Conversion between types
 Itob - integer to bytes (8-byte big endian)
 Btoi - bytes to integer
@@ -1328,7 +1688,7 @@ Btoi(z) # produces the integer 5
 
 
 PyTEAL Basics - Math operators
-125
+153
 Python math operators
 i = Int(10)
 j = i * Int(2) + Int(1)
@@ -1336,7 +1696,7 @@ k = And(Int(1), Or(Int(1), Int(0)))
 
 
 PyTEAL Basics - Byte string manipulation
-126
+154
 Byte string manipulation
 x = Bytes("content")
 y = Concat(Bytes("example "), x) # "example content"
@@ -1344,7 +1704,7 @@ z = Substring(y, Int(2), Len(y)) # "ample content"
 
 
 PyTEAL Basics - Crypto utilities
-127
+155
 Built-in crypto utilities
 h_sha256 = Sha256(z)
 h_sha512_256 = Sha512_256(z)
@@ -1352,7 +1712,7 @@ h_keccak = Keccak256(z)
 
 
 PyTEAL Basics - Fields (1/3)
-128
+156
 Fields from the current transaction
 Txn.sender()
 Txn.accounts.length()
@@ -1363,7 +1723,7 @@ Txn.group_index()
 
 
 PyTEAL Basics - Fields (2/3)
-129
+157
 Fields from transactions in the current atomic group
 Gtxn[0].sender()
 Gtxn[Txn.group_index() - Int(1)].sender()
@@ -1371,7 +1731,7 @@ Gtxn[Txn.group_index() - Int(1)].accounts[2]
 
 
 PyTEAL Basics - Fields (3/3)
-130
+158
 Fields from execution context
 Global.group_size()
 Global.round() # current round number
@@ -1379,13 +1739,13 @@ Global.latest_timestamp() # UNIX timestamp of last round
 
 
 PyTEAL Basics - Logs
-131
+159
 Log publicly viewable messages to the chain
 	Log(Bytes("message"))
 
 
 PyTEAL Basics - State (1/2)
-132
+160
 Global - one instance per application
 App.globalPut(Bytes("status"), Bytes("active")) # write to global key "status"
 
@@ -1395,7 +1755,7 @@ App.globalDel(Bytes("status")) # delete global key "status"
 
 
 PyTEAL Basics - State (2/2)
-133
+161
 Local - one instance per opted-in account per application
 App.localPut(Txn.sender(), Bytes("level"), Int(1)) # write to sender's local key "level"
 App.localPut(Txn.accounts[1], Bytes("level"), Int(2))  # write to other account's local key "level"
@@ -1406,7 +1766,7 @@ App.localDel(Txn.sender(), Bytes("level"))  # delete sender's local key "level"
 
 
 PyTEAL Basics - Control Flow (1/5)
-134
+162
 Approve the transaction and immediately exit
 Approve()
 Reject the transaction and immediately exit
@@ -1414,7 +1774,7 @@ Reject()
 
 
 PyTEAL Basics - Control Flow (2/5)
-135
+163
 Multiple expressions can be joined into a sequence
 program = Seq(
    App.globalPut(Bytes("count"), App.globalGet(Bytes("count")) + Int(1)),
@@ -1423,7 +1783,7 @@ program = Seq(
 
 
 PyTEAL Basics - Control Flow (3/5)
-136
+164
 Basic conditions can be expressed with If, Then, Else, ElseIf
 program = Seq(
    If(App.globalGet(Bytes("count")) == Int(100))
@@ -1439,7 +1799,7 @@ program = Seq(
 
 
 PyTEAL Basics - Control Flow (4/5)
-137
+165
 Larger conditions can be expressed with Cond
 program = Cond(
    [Txn.application_id() == Int(0), on_create],
@@ -1453,7 +1813,7 @@ program = Cond(
 
 
 PyTEAL Basics - Control Flow (5/5)
-138
+166
 Loops can be expressed with For and While
 i = ScratchVar(TealType.uint64)
 
@@ -1467,7 +1827,7 @@ on_create = Seq(
 
 
 PyTEAL Basics - Subroutines (1/2)
-139
+167
 Sections of code can be put into subroutines (Python decorators)
 @Subroutine(TealType.uint64)
 def isEven(i):
@@ -1477,7 +1837,7 @@ App.globalPut(Bytes("value_is_even"), isEven(Int(10)))
 
 
 PyTEAL Basics - Subroutines (2/2)
-140
+168
 Recursion is allowed
 @Subroutine(TealType.uint64)
 def recursiveIsEven(i):
@@ -1491,13 +1851,13 @@ def recursiveIsEven(i):
 
 
 PyTEAL Basics - Inner Transactions (1/3)
-141
+169
 Every application has control of an account
 Global.current_application_address()
 
 
 PyTEAL Basics - Inner Transactions (2/3)
-142
+170
 Applications can send transactions from this account
 Seq(
    InnerTxnBuilder.Begin(),
@@ -1513,7 +1873,7 @@ Seq(
 
 
 PyTEAL Basics - Inner Transactions (3/3)
-143
+171
 appAddr = Global.current_application_address()
 Seq(
    InnerTxnBuilder.Begin(),
@@ -1534,7 +1894,7 @@ Seq(
 
 
 A pythonic Algorand stack
-144
+172
 Algorand Python SDK
 PyTEAL
 PyTest for Smart Contracts unit-tests and e2e-tests
@@ -1543,11 +1903,16 @@ Algorand Sandbox Docker in dev mode
 PyCharm IDE & AlgoDEA plug-in
 
 
-145
+“Zero to Hero PyTEAL” crash course
+173
+Join and learn in 12 lessons!
+
+
+174
 DAPP EXAMPLE & USE CASESExample: zero coupon bond
 
 Zero coupon bond
-146
+175
 Bondholder purchase a bond (only if KYC has been passed)
 Bond application checks for bond’s maturity
 Bond Issuer re-pays the Bondholder at given rate
@@ -1558,7 +1923,7 @@ ACCOUNT
 BOND ESCROW
 CONTRACT ACCOUNT
 Zero coupon bond
-147
+176
 Bondholder purchase a bond (only if KYC has been passed)
 BOND
 APPLICATION
@@ -1583,7 +1948,7 @@ reads
 BONDHOLDER
 ACCOUNT
 Zero coupon bond
-148
+177
 Bond application checks for bond’s maturity
 BOND ESCROW
 CONTRACT ACCOUNT
@@ -1600,7 +1965,7 @@ APPLICATION
 
 
 Zero coupon bond
-149
+178
 Bond Issuer re-pays the Bondholder at given rate
 ATOMIC TRANSACTION
 
@@ -1627,4 +1992,7 @@ BOND MATURE:   YES
 BOND
 
 
-Q&A
+Thanks to the contributors!
+
+Jason Paulos
+Pietro Grassano
